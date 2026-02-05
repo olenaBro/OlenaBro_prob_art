@@ -1,0 +1,529 @@
+/* ==================== CSS ЗМІННІ ==================== */
+:root {
+    --color-scheme-1-background: var(--color-neutral-darkest);
+    --color-neutral-darkest: #060307;
+    --color-scheme-1-border: var(--opacity-white-20);
+    --color-scheme-1-text: var(--color-white);
+    --color-neutral-lighter: #d9d9d9;
+    --color-white: #fff;
+    --color-neutral-lightest: #f2f2f2;
+    --color-neutral-light: #b4b3b4;
+    --color-neutral: #828183;
+    --color-neutral-dark: #504e51;
+    --color-neutral-darker: #1e1c1f;
+    --opacity-transparent: rgba(255, 255, 255, 0);
+    --color-scheme-1-foreground: var(--color-neutral-darkest);
+    --color-scheme-1-accent: var(--color-white);
+    --opacity-white-5: rgba(255, 255, 255, 0.05);
+    --opacity-white-10: rgba(255, 255, 255, 0.1);
+    --opacity-white-15: rgba(255, 255, 255, 0.15);
+    --opacity-white-20: rgba(255, 255, 255, 0.2);
+    --opacity-white-30: rgba(255, 255, 255, 0.3);
+    --opacity-white-40: rgba(255, 255, 255, 0.4);
+    --opacity-white-50: rgba(255, 255, 255, 0.5);
+    --opacity-white-60: rgba(255, 255, 255, 0.6);
+    --opacity-neutral-darkest-5: rgba(6, 3, 7, 0.05);
+    --opacity-neutral-darkest-10: rgba(6, 3, 7, 0.1);
+    --opacity-neutral-darkest-15: rgba(6, 3, 7, 0.15);
+    --opacity-neutral-darkest-20: rgba(6, 3, 7, 0.2);
+    --opacity-neutral-darkest-30: rgba(6, 3, 7, 0.3);
+    --opacity-neutral-darkest-40: rgba(6, 3, 7, 0.4);
+    --opacity-neutral-darkest-50: rgba(6, 3, 7, 0.5);
+    --opacity-neutral-darkest-60: rgba(6, 3, 7, 0.6);
+    --color-affair-lightest: #f1ecf4;
+    --color-affair-lighter: #e3d9e9;
+    --color-affair-light: #9f7ab2;
+    --color-affair: #764191;
+    --color-affair-dark: #5e3474;
+    --color-affair-darker: #2f1a3a;
+    --color-affair-darkest: #23132b;
+    --color-chateau-green-lightest: #ecf4ed;
+    --color-chateau-green-lighter: #d9eadc;
+    --color-chateau-green-light: #7ab686;
+    --color-chateau-green: #419853;
+    --color-chateau-green-dark: #347942;
+    --color-chateau-green-darker: #1a3c21;
+    --color-chateau-green-darkest: #132d18;
+    --color-scheme-2-text: var(--color-white);
+    --color-scheme-2-background: var(--color-neutral-darker);
+    --color-scheme-2-border: var(--opacity-white-20);
+    --color-scheme-2-accent: var(--color-white);
+    --color-scheme-2-foreground: var(--color-neutral-darker);
+    --color-scheme-3-text: var(--color-white);
+    --color-scheme-3-background: var(--color-affair-darkest);
+    --color-scheme-3-border: var(--opacity-white-20);
+    --color-scheme-3-accent: var(--color-white);
+    --color-scheme-3-foreground: var(--color-affair-darkest);
+    --color-error-red: #af0404;
+}
+
+/* ==================== BODY ==================== */
+
+body {
+    margin: 0;
+    background-color: var(--color-neutral-darkest);
+    color: var(--color-white);
+    font-family: sans-serif;
+    overflow-x: hidden;
+}
+
+/* ==================== БАЗОВІ СТИЛІ (MOBILE FIRST - 320px+) ==================== */
+
+/* ==================== CONTAINER ==================== */
+
+.container {
+    max-width: 320px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* ==================== HERO СЕКЦІЯ ==================== */
+
+.hero {
+    /* Positioning */
+    position: relative;
+    isolation: isolate;
+    
+    /* Box Model */
+    width: 100%;
+    padding: 40px 0;
+    
+    /* Appearance */
+    background: linear-gradient(180deg, 
+        var(--color-neutral-darkest) 0%, 
+        var(--color-affair-darkest) 10%, 
+        #2a0a4a 20%, 
+        #2a0a4a 80%, 
+        var(--color-affair-darkest) 90%, 
+        var(--color-neutral-darkest) 100%
+    );
+    
+    /* Misc */
+    overflow: hidden;
+}
+
+.hero-container {
+    /* Display & Flexbox */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+/* ==================== БЛОК З КОНТЕНТОМ ==================== */
+
+.hero-content {
+    /* Positioning */
+    position: relative;
+    z-index: 10;
+    
+    /* Box Model */
+    max-width: 100%;
+    margin-bottom: 30px;
+    
+    /* Appearance */
+    text-align: center;
+}
+
+/* ==================== ЗАГОЛОВОК ==================== */
+
+.hero-title {
+    /* Box Model */
+    margin: 0 0 20px 0;
+    
+    /* Appearance */
+    font-size: 2em;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-white);
+}
+
+/* ==================== ТЕКСТ ==================== */
+
+.hero-text {
+    /* Box Model */
+    margin: 0 0 30px 0;
+    
+    /* Appearance */
+    font-size: 0.9em;
+    line-height: 1.6;
+    color: var(--color-neutral-lighter);
+}
+
+/* ==================== КНОПКА EXPLORE ARTISTS ==================== */
+
+.hero-btn {
+    /* Display & Flexbox */
+    display: inline-block;
+    
+    /* Box Model */
+    padding: 0;
+    border: none;
+    
+    /* Appearance */
+    background: none;
+    
+    /* Misc */
+    cursor: pointer;
+}
+
+.hero-btn-link {
+    /* Positioning */
+    position: relative;
+    
+    /* Display & Flexbox */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    
+    /* Box Model */
+    padding: 14px 24px;
+    border-radius: 10px;
+    
+    /* Appearance */
+    background-color: var(--color-affair);
+    color: var(--color-white);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    
+    /* Misc */
+    transition: background-color 0.3s ease;
+}
+
+/* ==================== ІКОНКА КНОПКИ ==================== */
+
+.hero-btn-icon {
+    /* Display & Flexbox */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Box Model */
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    
+    /* Misc */
+    transition: transform 0.3s ease;
+}
+
+/* ==================== HOVER ЕФЕКТИ КНОПКИ ==================== */
+
+.hero-btn:hover .hero-btn-link {
+    /* Appearance */
+    background-color: var(--color-affair-light);
+}
+
+.hero-btn:hover .hero-btn-icon {
+    /* Misc */
+    transform: translateX(4px);
+}
+
+/* ==================== ACTIVE СТАН КНОПКИ ==================== */
+
+.hero-btn:active .hero-btn-link {
+    /* Appearance */
+    background-color: var(--color-affair-dark);
+}
+
+/* ==================== FOCUS СТАН КНОПКИ ==================== */
+
+.hero-btn:focus-visible {
+    /* Appearance */
+    outline: 2px solid var(--color-affair-light);
+    outline-offset: 2px;
+    border-radius: 12px;
+}
+
+/* ==================== ГАЛЕРЕЯ (PHOTO WHEEL) ==================== */
+
+.hero-gallery {
+    /* Positioning */
+    position: relative;
+    z-index: 1;
+    
+    /* Display & Flexbox */
+    display: flex;
+    gap: 10px;
+    
+    /* Box Model */
+    width: 100%;
+    max-width: 100%;
+    height: 500px;
+    
+    /* Misc */
+    contain: layout style paint;
+    overflow: hidden;
+}
+
+/* ==================== ТУМАН НАД ГАЛЕРЕЄЮ ==================== */
+
+.hero-gallery::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 0;
+    right: 0;
+    height: 120px;
+    z-index: 10;
+    background: linear-gradient(180deg, 
+        var(--color-neutral-darkest) 0%,
+        rgba(6, 3, 7, 0.9) 20%,
+        rgba(6, 3, 7, 0.6) 50%,
+        rgba(6, 3, 7, 0) 100%
+    );
+    pointer-events: none;
+}
+
+/* ==================== ТУМАН ПІД ГАЛЕРЕЄЮ ==================== */
+
+.hero-gallery::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    height: 120px;
+    z-index: 10;
+    background: linear-gradient(0deg, 
+        var(--color-neutral-darkest) 0%,
+        rgba(6, 3, 7, 0.9) 20%,
+        rgba(6, 3, 7, 0.6) 50%,
+        rgba(6, 3, 7, 0) 100%
+    );
+    pointer-events: none;
+}
+
+/* ==================== КОЛОНКИ ГАЛЕРЕЇ ==================== */
+
+.hero-gallery-column {
+    /* Positioning */
+    position: relative;
+    clip-path: inset(0 0 0 0);
+    
+    /* Display & Flexbox */
+    display: block;
+    flex: 1;
+    
+    /* Misc */
+    overflow: hidden;
+}
+
+/* ==================== ТРЕК З ФОТОГРАФІЯМИ ==================== */
+
+.hero-gallery-track {
+    /* Display & Flexbox */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    
+    /* Misc */
+    will-change: transform;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 5%, black 95%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 5%, black 95%, transparent 100%);
+    pointer-events: none;
+}
+
+/* ==================== КОНТЕЙНЕР ФОТО (PICTURE) ==================== */
+
+.hero-gallery-img {
+    /* Positioning */
+    position: relative;
+    
+    /* Display & Flexbox */
+    display: block;
+    flex-shrink: 0;
+    
+    /* Box Model */
+    width: 160px;
+    height: 170px;
+    border-radius: 20px;
+    
+    /* Appearance */
+    box-shadow: 0 4px 12px var(--opacity-neutral-darkest-40);
+    
+    /* Misc */
+    overflow: hidden;
+    pointer-events: none;
+}
+
+/* ==================== ЗОБРАЖЕННЯ ==================== */
+
+.hero-gallery-img img {
+    /* Display & Flexbox */
+    display: block;
+    
+    /* Box Model */
+    width: 100%;
+    height: 100%;
+    
+    /* Misc */
+    object-fit: cover;
+    object-position: center;
+}
+
+/* ==================== АНІМАЦІЇ ==================== */
+
+/* Анімація для лівої колонки - рух вгору */
+.hero-gallery-column-left .hero-gallery-track {
+    animation: wheel-up 30s linear infinite;
+}
+
+/* Анімація для правої колонки - рух вниз */
+.hero-gallery-column-right .hero-gallery-track {
+    animation: wheel-down 35s linear infinite;
+}
+
+@keyframes wheel-up {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(calc(-1 * var(--original-height)));
+    }
+}
+
+@keyframes wheel-down {
+    0% {
+        transform: translateY(calc(-1 * var(--original-height)));
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* ==================== НАСТУПНА СЕКЦІЯ ==================== */
+
+.next-section {
+    /* Positioning */
+    position: relative;
+    z-index: 2;
+    
+    /* Appearance */
+    background-color: var(--color-neutral-darkest);
+}
+
+/* ==================== МЕДІА-ЗАПИТИ (MOBILE FIRST) ==================== */
+
+/* ПЛАНШЕТ (від 768px до 1439px) */
+@media (min-width: 768px) and (max-width: 1439px) {
+    .container {
+        max-width: 768px;
+        padding: 0 32px;
+    }
+
+    .hero {
+        padding: 50px 0;
+    }
+
+    .hero-container {
+        gap: 30px;
+    }
+
+    .hero-title {
+        font-size: 2.5em;
+    }
+    
+    .hero-text {
+        font-size: 1em;
+    }
+    
+    .hero-btn-link {
+        padding: 16px 28px;
+        border-radius: 12px;
+        font-size: 16px;
+    }
+    
+    .hero-btn-icon {
+        width: 22px;
+        height: 22px;
+    }
+
+    .hero-gallery {
+        width: 100%;
+        max-width: 710px;
+        height: 550px;
+        gap: 12px;
+    }
+    
+    .hero-gallery-img {
+        width: 342.6px;
+        height: 340px;
+    }
+
+    .hero-gallery-column-left .hero-gallery-track {
+        animation: wheel-up 22s linear infinite;
+    }
+
+    .hero-gallery-column-right .hero-gallery-track {
+        animation: wheel-down 27s linear infinite;
+    }
+}
+
+/* ДЕСКТОП (від 1440px) */
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1440px;
+        padding: 0 64px;
+    }
+
+    .hero {
+        padding: 60px 0;
+    }
+
+    .hero-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 40px;
+    }
+
+    .hero-content {
+        max-width: 500px;
+        text-align: left;
+    }
+
+    .hero-title {
+        font-size: 3em;
+    }
+    
+    .hero-text {
+        font-size: 1em;
+    }
+    
+    .hero-btn-link {
+        padding: 16px 32px;
+        border-radius: 12px;
+        font-size: 16px;
+    }
+    
+    .hero-btn-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .hero-gallery {
+        width: 55%;
+        max-width: 650px;
+        height: 600px;
+        gap: 15px;
+    }
+    
+    .hero-gallery-img {
+        width: 312px;
+        height: 340px;
+    }
+
+    .hero-gallery-column-left .hero-gallery-track {
+        animation: wheel-up 20s linear infinite;
+    }
+
+    .hero-gallery-column-right .hero-gallery-track {
+        animation: wheel-down 25s linear infinite;
+    }
+}
