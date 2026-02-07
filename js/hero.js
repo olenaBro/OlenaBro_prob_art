@@ -1,7 +1,32 @@
+const GAP_SIZE = 16;
+
 function initHeroGallery() {
     const galleryTracks = document.querySelectorAll('.hero-gallery-track');
-
+    duplicateImages(galleryTracks);
     setupAnimationHeights(galleryTracks);
+    setupNavigationButton();
+}
+
+function setupNavigationButton() {
+    const navButton = document.querySelector('[data-href]');
+    if (navButton) {
+        navButton.addEventListener('click', function () {
+            const href = this.dataset.href;
+            if (href) {
+                window.location.href = href;
+            }
+        });
+    }
+}
+
+function duplicateImages(tracks) {
+    tracks.forEach(track => {
+        const originalPictures = [...track.querySelectorAll('.hero-gallery-img')];
+        originalPictures.forEach(picture => {
+            const clone = picture.cloneNode(true);
+            track.appendChild(clone);
+        });
+    });
 }
 
 function setupAnimationHeights(tracks) {
@@ -28,7 +53,6 @@ function setupAnimationHeights(tracks) {
 
         originalPictures.forEach(picture => {
             const img = picture.querySelector('img');
-
             if (isImageLoaded(img)) {
                 originalHeight += calculatePictureHeight(picture);
                 onImageLoaded();
@@ -41,7 +65,6 @@ function setupAnimationHeights(tracks) {
                 });
             }
         });
-
         setInitialPositionForRightColumn(track);
     });
 }
@@ -59,12 +82,12 @@ function isImageLoaded(img) {
 }
 
 function calculatePictureHeight(picture) {
-    const gapSize = 10;
-    return picture.offsetHeight + gapSize;
+    return picture.offsetHeight + GAP_SIZE;
 }
 
 function setTrackHeight(track, height) {
-    track.style.setProperty('--original-height', `${height}px`);
+    const adjustedHeight = height - GAP_SIZE;
+    track.style.setProperty('--original-height', `${adjustedHeight}px`);
 }
 
 function pauseAnimation(track) {
@@ -90,5 +113,4 @@ function setInitialPositionForRightColumn(track) {
 function isRightColumn(track) {
     return track.closest('.hero-gallery-column-right');
 }
-
 document.addEventListener('DOMContentLoaded', initHeroGallery);
